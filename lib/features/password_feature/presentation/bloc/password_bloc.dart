@@ -47,7 +47,7 @@ class PasswordBloc extends Bloc<PasswordEvent, PasswordState> {
             .call(CreatePasswordParams(vendorEntity: event.passwordEntity));
         return emit(
           await response.fold(
-            (failure) => ErrorPassword(password: mapFailureToPassword(failure)),
+            (failure) => ErrorPassword(message: mapFailureToPassword(failure)),
             (password) => EmptyPassword(),
           ),
         );
@@ -67,7 +67,7 @@ class PasswordBloc extends Bloc<PasswordEvent, PasswordState> {
             .call(EditPasswordParams(passwordEntity: event.passwordEntity));
         return emit(
           await response.fold(
-                (failure) => ErrorPassword(password: mapFailureToPassword(failure)),
+                (failure) => ErrorPassword(message: mapFailureToPassword(failure)),
                 (password) => EmptyPassword(),
           ),
         );
@@ -80,6 +80,7 @@ class PasswordBloc extends Bloc<PasswordEvent, PasswordState> {
     GetAllPasswordsEvent event,
     Emitter<PasswordState> emit,
   ) async {
+    print('');
     switch (event.runtimeType) {
       case GetAllPasswordsEvent:
         emit(LoadingPassword());
@@ -87,7 +88,7 @@ class PasswordBloc extends Bloc<PasswordEvent, PasswordState> {
             await getAllPasswords.call(NoParams());
         return emit(
           await response.fold(
-            (failure) => ErrorPassword(password: mapFailureToPassword(failure)),
+            (failure) => ErrorPassword(message: mapFailureToPassword(failure)),
             (passwordList) => LoadedPasswordList(passwordList: passwordList),
           ),
         );
@@ -106,7 +107,7 @@ class PasswordBloc extends Bloc<PasswordEvent, PasswordState> {
         await getPasswordById.call(GetPasswordParam(passwordList:event.password));
         return emit(
           await response.fold(
-                (failure) => ErrorPassword(password: mapFailureToPassword(failure)),
+                (failure) => ErrorPassword(message: mapFailureToPassword(failure)),
                 (password) => LoadedPassword(password: password),
           ),
         );

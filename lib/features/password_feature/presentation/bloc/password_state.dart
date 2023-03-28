@@ -40,10 +40,10 @@ class LoadedPassword extends PasswordState {
 
 
 class ErrorPassword  extends PasswordState {
-  final String password;
+  final String message;
 
-  ErrorPassword ({required this.password});
+  ErrorPassword ({required this.message});
 
   @override
-  List<Object> get props => [password];
+  List<Object> get props => [message];
 }

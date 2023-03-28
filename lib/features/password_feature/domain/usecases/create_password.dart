@@ -13,6 +13,7 @@ class CreatePassword implements UseCase<void, CreatePasswordParams> {
 
   @override
   Future<Either<Failure, void>> call(CreatePasswordParams params) async {
+    print('create passwords called');
     return await repository.createPassword(params.vendorEntity);
   }
 }

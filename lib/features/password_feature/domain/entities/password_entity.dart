@@ -1,17 +1,17 @@
 import 'package:equatable/equatable.dart';
 
 class PasswordEntity extends Equatable {
-  String role;
+  String website;
   String password;
 
   PasswordEntity({
-    required this.role,
+    required this.website,
     required this.password,
   });
 
   @override
   List<Object?> get props => [
-        role,
+        website,
         password,
       ];
 }
