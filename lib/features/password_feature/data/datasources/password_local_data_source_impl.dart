@@ -1,23 +1,38 @@
 import 'dart:convert';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import '../../../../core/throw_server_exception.dart';
 import '../../domain/entities/password_entity.dart';
 import '../models/password_model.dart';
-import 'password_remote_data_source.dart';
+import 'password_local_data_source.dart';
 import 'package:http/http.dart' as http;
 
-class PasswordRemoteDataSourceImpl implements PasswordRemoteDataSource {
-  PasswordRemoteDataSourceImpl({required this.client});
+class PasswordLocalDataSourceImpl implements PasswordLocalDataSource {
+  PasswordLocalDataSourceImpl({required this.storage});
 
-  late final http.Client client;
+  final FlutterSecureStorage storage;
+
+  IOSOptions _getIOSOptions() => const IOSOptions(
+        accountName: AppleOptions.defaultAccountName,
+      );
+
+  AndroidOptions _getAndroidOptions() => const AndroidOptions(
+        encryptedSharedPreferences: true,
+        // sharedPreferencesName: 'Test2',
+        // preferencesKeyPrefix: 'Test'
+      );
 
   @override
   Future<void> createPassword(PasswordEntity passwordEntity) async {
     try {
-      var map = {};
-      //await passwordCollection.add(map);
-    } on FirebaseException catch (e) {
-      throwException(e);
+      await storage.write(
+        key: passwordEntity.website,
+        value: passwordEntity.password,
+        iOptions: _getIOSOptions(),
+        aOptions: _getAndroidOptions(),
+      );
+    } on Exception catch (e) {
+      throw Exception();
     }
   }
 
@@ -33,24 +48,20 @@ class PasswordRemoteDataSourceImpl implements PasswordRemoteDataSource {
 
   @override
   Future<List<PasswordEntity>> getAllPasswords() async {
+    print('get all passwords called');
     List<PasswordModel> passwords = [];
+    late var results;
     try {
-      /*
-      await passwordCollection
-          .where('posterUid', isEqualTo: getFirebaseUserUid())
-          .get()
-          .then(
-            (data) => data.docs.forEach(
-              (doc) {
-                final PasswordModel password =
-                    PasswordModel.fromJson(doc.data() as Map<String, dynamic>);
-                password.uid = doc.id;
-                passwords.add(password);
-              },
-            ),
-          );
-      // TODO throw exceptions from all methods in all data impl classes and all feature
-    */
+      final all = await storage.readAll(
+        iOptions: _getIOSOptions(),
+        aOptions: _getAndroidOptions(),
+      );
+print('all: ' +  all.keys.first);
+      results = all.entries
+          .map(
+              (entry) => PasswordEntity(website: entry.key, password: entry.value))
+          .toList(growable: false);
+      return results;
     } on FirebaseException catch (e) {
       throwException(e);
     }
@@ -58,7 +69,8 @@ class PasswordRemoteDataSourceImpl implements PasswordRemoteDataSource {
   }
 
   @override
-  Future<PasswordEntity> getPasswordById(List<PasswordEntity> passwordList) async {
+  Future<PasswordEntity> getPasswordById(
+      List<PasswordEntity> passwordList) async {
     List<PasswordModel> passwordModelList = [];
     passwordList.forEach((element) {
       passwordModelList.add(
@@ -81,11 +93,11 @@ class PasswordRemoteDataSourceImpl implements PasswordRemoteDataSource {
     passwordModelList.forEach(
       (element) {
         passwordMapList.add(element.toJson());
-      print('kakas2: ' + element.toJson().toString());
+        print('kakas2: ' + element.toJson().toString());
       },
     );
     passwordMapList.forEach(
-          (element) {
+      (element) {
         print('passwordMapList: ' + element.toString());
       },
     );

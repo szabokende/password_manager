@@ -7,7 +7,7 @@ import 'package:go_router/go_router.dart';
 import 'package:material_color_generator/material_color_generator.dart';
 import 'features/password_feature/domain/entities/password_entity.dart';
 import 'features/password_feature/presentation/bloc/password_bloc.dart';
-import 'features/password_feature/presentation/pages/HomePage.dart';
+import 'features/password_feature/presentation/pages/home_page.dart';
 import 'injection_container.dart' as di;
 import 'injection_container.dart';
 
