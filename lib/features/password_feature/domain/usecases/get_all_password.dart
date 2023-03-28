@@ -13,6 +13,7 @@ class GetAllPasswords implements UseCase<List<PasswordEntity>, NoParams> {
 
   @override
   Future<Either<Failure, List<PasswordEntity>>> call(NoParams params) async {
+    print('get all passwords called');
     return await repository.getAllPasswords();
   }
 }

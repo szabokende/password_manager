@@ -10,6 +10,7 @@ import 'features/password_feature/domain/entities/password_entity.dart';
 import 'features/password_feature/presentation/bloc/password_bloc.dart';
 import 'features/password_feature/presentation/pages/HomePage.dart';
 import 'firebase_options.dart';
+import 'features/password_feature/presentation/pages/home_page.dart';
 import 'injection_container.dart' as di;
 import 'injection_container.dart';
 

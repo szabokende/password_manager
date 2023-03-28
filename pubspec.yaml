@@ -46,6 +46,8 @@ dependencies:
   material_color_generator: ^1.1.0
   firebase_storage: ^11.0.16
   cloud_firestore: ^4.4.5
+  flutter_secure_storage: ^8.0.0
+  random_password_generator: ^0.2.1
 
 dev_dependencies:
   flutter_test:

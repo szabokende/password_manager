@@ -1,8 +1,11 @@
+import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:get_it/get_it.dart';
 import 'package:http/http.dart' as http;
+import 'package:password_manager/features/password_feature/data/datasources/password_local_data_source_impl.dart';
 
 import 'core/network/network_info.dart';
 
+import 'features/password_feature/data/datasources/password_local_data_source.dart';
 import 'features/password_feature/data/datasources/password_remote_data_source.dart';
 import 'features/password_feature/data/datasources/password_remote_data_source_impl.dart';
 
@@ -44,18 +47,22 @@ Future<void> init() async {
 
   // Repositories
   sl.registerLazySingleton<PasswordRepository>(
-    () => PasswordRepositoryImpl(passwordRemoteDataSource: sl()),
+    () => PasswordRepositoryImpl(passwordRemoteDataSource: sl(), passwordLocalDataSource: sl()),
+
   );
 
   // Data sources
   sl.registerLazySingleton<PasswordRemoteDataSource>(
     () => PasswordRemoteDataSourceImpl(client: sl()),
   );
-
+  sl.registerLazySingleton<PasswordLocalDataSource>(
+        () => PasswordLocalDataSourceImpl(storage: sl()),
+  );
 
 
   //! Core
   sl.registerLazySingleton<NetworkInfo>(() => NetworkInfoImpl(sl()));
   //! External
   sl.registerLazySingleton(() => http.Client());
+  sl.registerLazySingleton(() => const FlutterSecureStorage());
 }
