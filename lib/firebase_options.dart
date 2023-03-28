@@ -47,7 +47,7 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyBRy982ogCgil1hrgvnsc5d9wqPSNB3akc',
+    apiKey: 'API KEY',
     appId: '1:791901174544:web:4532160c1b0a2fcd594395',
     messagingSenderId: '791901174544',
     projectId: 'memorial-app-2d782',
@@ -57,7 +57,7 @@ class DefaultFirebaseOptions {
   );
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyCXP4IJAsfdkCzBmzae_aikl3FReSvgOZo',
+    apiKey: 'API KEY',
     appId: '1:791901174544:android:c32ed46ebe7dac2c594395',
     messagingSenderId: '791901174544',
     projectId: 'memorial-app-2d782',
@@ -65,7 +65,7 @@ class DefaultFirebaseOptions {
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyCHPj2Z18wbX6osabFjGZowVzRp78TdoaQ',
+    apiKey: 'API KEY',
     appId: '1:791901174544:ios:5c6b6954391ecc1b594395',
     messagingSenderId: '791901174544',
     projectId: 'memorial-app-2d782',
