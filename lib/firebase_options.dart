@@ -17,7 +17,10 @@ import 'package:flutter/foundation.dart'
 class DefaultFirebaseOptions {
   static FirebaseOptions get currentPlatform {
     if (kIsWeb) {
-      return web;
+      throw UnsupportedError(
+        'DefaultFirebaseOptions have not been configured for web - '
+        'you can reconfigure this by running the FlutterFire CLI again.',
+      );
     }
     switch (defaultTargetPlatform) {
       case TargetPlatform.android:
@@ -25,10 +28,7 @@ class DefaultFirebaseOptions {
       case TargetPlatform.iOS:
         return ios;
       case TargetPlatform.macOS:
-        throw UnsupportedError(
-          'DefaultFirebaseOptions have not been configured for macos - '
-          'you can reconfigure this by running the FlutterFire CLI again.',
-        );
+        return macos;
       case TargetPlatform.windows:
         throw UnsupportedError(
           'DefaultFirebaseOptions have not been configured for windows - '
@@ -46,31 +46,31 @@ class DefaultFirebaseOptions {
     }
   }
 
-  static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'API KEY',
-    appId: '1:791901174544:web:4532160c1b0a2fcd594395',
-    messagingSenderId: '791901174544',
-    projectId: 'memorial-app-2d782',
-    authDomain: 'memorial-app-2d782.firebaseapp.com',
-    storageBucket: 'memorial-app-2d782.appspot.com',
-    measurementId: 'G-QW67ECW28T',
-  );
-
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'API KEY',
-    appId: '1:791901174544:android:c32ed46ebe7dac2c594395',
-    messagingSenderId: '791901174544',
-    projectId: 'memorial-app-2d782',
-    storageBucket: 'memorial-app-2d782.appspot.com',
+    apiKey: 'AIzaSyAeiZIIjyMuJ7l3JNeuej2GoZLvL9PGJ3o',
+    appId: '1:559654086191:android:7956953f42935603fa88da',
+    messagingSenderId: '559654086191',
+    projectId: 'password-manager-f8302',
+    storageBucket: 'password-manager-f8302.appspot.com',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'API KEY',
-    appId: '1:791901174544:ios:5c6b6954391ecc1b594395',
-    messagingSenderId: '791901174544',
-    projectId: 'memorial-app-2d782',
-    storageBucket: 'memorial-app-2d782.appspot.com',
-    iosClientId: '791901174544-efmikvamc3hp6cvltc5kbai9a0faml0l.apps.googleusercontent.com',
-    iosBundleId: 'com.example.memorialApp',
+    apiKey: 'AIzaSyAvvOQden8uA1nuVHwWKG-EVPYThyBZscA',
+    appId: '1:559654086191:ios:a1fc4b8b58584b59fa88da',
+    messagingSenderId: '559654086191',
+    projectId: 'password-manager-f8302',
+    storageBucket: 'password-manager-f8302.appspot.com',
+    iosClientId: '559654086191-f3s6hstp3qg2lbalb226mph2fuvspfv3.apps.googleusercontent.com',
+    iosBundleId: 'com.example.passwordManager',
+  );
+
+  static const FirebaseOptions macos = FirebaseOptions(
+    apiKey: 'AIzaSyAvvOQden8uA1nuVHwWKG-EVPYThyBZscA',
+    appId: '1:559654086191:ios:a1fc4b8b58584b59fa88da',
+    messagingSenderId: '559654086191',
+    projectId: 'password-manager-f8302',
+    storageBucket: 'password-manager-f8302.appspot.com',
+    iosClientId: '559654086191-f3s6hstp3qg2lbalb226mph2fuvspfv3.apps.googleusercontent.com',
+    iosBundleId: 'com.example.passwordManager',
   );
 }

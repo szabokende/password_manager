@@ -1,6 +1,8 @@
 import 'dart:convert';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_core/firebase_core.dart';
 import '../../../../core/throw_server_exception.dart';
+import '../../../../utils/collection_names.dart';
 import '../../domain/entities/password_entity.dart';
 import '../models/password_model.dart';
 import 'password_remote_data_source.dart';
@@ -20,6 +22,19 @@ class PasswordRemoteDataSourceImpl implements PasswordRemoteDataSource {
       throwException(e);
     }
   }
+  @override
+  Future<void> syncPassword(PasswordEntity passwordEntity) async {
+
+    CollectionReference passwordCollection =
+    FirebaseFirestore.instance.collection(PASSWORD_COLLECTION);
+
+    try {
+      var map = {};
+      await passwordCollection.add(map);
+    } on FirebaseException catch (e) {
+      throwException(e);
+    }
+  }
 
   @override
   Future<void> editPassword(PasswordEntity passwordEntity) async {
@@ -33,9 +48,12 @@ class PasswordRemoteDataSourceImpl implements PasswordRemoteDataSource {
 
   @override
   Future<List<PasswordEntity>> getAllPasswords() async {
+
+    CollectionReference passwordCollection =
+    FirebaseFirestore.instance.collection(PASSWORD_COLLECTION);
     List<PasswordModel> passwords = [];
     try {
-      /*
+
       await passwordCollection
           .where('posterUid', isEqualTo: getFirebaseUserUid())
           .get()
@@ -50,7 +68,7 @@ class PasswordRemoteDataSourceImpl implements PasswordRemoteDataSource {
             ),
           );
       // TODO throw exceptions from all methods in all data impl classes and all feature
-    */
+
     } on FirebaseException catch (e) {
       throwException(e);
     }
