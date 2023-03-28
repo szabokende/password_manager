@@ -1,4 +1,5 @@
 
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
@@ -7,6 +8,8 @@ import 'package:go_router/go_router.dart';
 import 'package:material_color_generator/material_color_generator.dart';
 import 'features/password_feature/domain/entities/password_entity.dart';
 import 'features/password_feature/presentation/bloc/password_bloc.dart';
+import 'features/password_feature/presentation/pages/HomePage.dart';
+import 'firebase_options.dart';
 import 'features/password_feature/presentation/pages/home_page.dart';
 import 'injection_container.dart' as di;
 import 'injection_container.dart';
@@ -15,6 +18,9 @@ import 'utils/route_names.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
 
   await di.init();
 
@@ -45,7 +51,7 @@ class MyApp extends StatelessWidget {
 
           debugShowCheckedModeBanner: false,
           routerConfig: _router,
-          title: 'Memoris.life',
+          title: 'password manager',
           theme: ThemeData(
             colorScheme: ColorScheme.fromSeed(
               seedColor: generateMaterialColor(
