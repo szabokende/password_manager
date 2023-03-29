@@ -6,6 +6,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:password_manager/features/password_feature/domain/entities/password_entity.dart';
 import 'package:password_manager/features/password_feature/presentation/bloc/password_bloc.dart';
 import 'package:password_manager/features/password_feature/presentation/bloc/password_event.dart';
+import 'package:password_manager/upload.dart';
 
 import '../bloc/password_state.dart';
 
@@ -62,6 +63,15 @@ class _HomePageState extends State<HomePage> {
                 'List values',
               ),
             ),
+            ElevatedButton(
+              onPressed: () => {
+                syncUp("location", PasswordEntity(website: "website", password: "ssword", ), "fghjjhre" )
+              },
+              child: Text(
+                'upload values',
+              ),
+            ),
+
             BlocBuilder<PasswordBloc, PasswordState>(
               builder: (context, state) {
                 print('state is: ' + state.runtimeType.toString());
