@@ -1,6 +1,8 @@
-##Group
-##Kende Szabo, Kristof Szabo, Oliver Banizs
+
 # Password manager mini project
+
+##Group
+Kende Szabo, Kristof Szabo, Oliver Banizs
 
 
 ## How to run
