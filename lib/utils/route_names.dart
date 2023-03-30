@@ -12,4 +12,5 @@ const String  GET_ALL_VENDOR_ITEM_PRIMARY_ACTIONS_PAGE= '/VendorGetAllVendorItem
 const String  VENDOR_ITEM_PRIMARY_ACTION_DETAIL_PAGE = '/vendorItemPrimaryActionDetailPage';
 const String  VENDOR_ITEM_SEARCH_PAGE = '/vendorItemSearchPage';
 const String  GET_ALL_CANDLES_PAGE = '/candles'; // done
-const String  CHAT = '/chat'; // done
+const String  SYNC_DOWN_PAGE = '/syncDownPage'; // done
+

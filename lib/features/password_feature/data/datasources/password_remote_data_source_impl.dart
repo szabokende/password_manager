@@ -53,7 +53,7 @@ class PasswordRemoteDataSourceImpl implements PasswordRemoteDataSource {
     FirebaseFirestore.instance.collection(PASSWORD_COLLECTION);
     List<PasswordModel> passwords = [];
     try {
-
+/*
       await passwordCollection
           .where('posterUid', isEqualTo: getFirebaseUserUid())
           .get()
@@ -67,6 +67,7 @@ class PasswordRemoteDataSourceImpl implements PasswordRemoteDataSource {
               },
             ),
           );
+      */
       // TODO throw exceptions from all methods in all data impl classes and all feature
 
     } on FirebaseException catch (e) {
