@@ -1,4 +1,8 @@
-# Where to run
+
+# Password manager mini project
+
+
+## How to run
 
 
 
@@ -6,7 +10,7 @@
 You can check the runing project on the following link: lazyhome.dk.
 Or you can run the project on Android or IOS with Android studio after you downloded the flutter sdk and framework.
 
-## How to use
+## Screenshots
 
 
 <img width="1428" alt="Screenshot 2023-03-30 at 17 28 34" src="https://user-images.githubusercontent.com/44951484/228887101-09d7dbde-c29c-4555-8c79-a488ab020dbd.png">
@@ -27,7 +31,9 @@ Or you can run the project on Android or IOS with Android studio after you downl
 ![Screenshot_20230330_173239](https://user-images.githubusercontent.com/44951484/228890828-e6f29e75-d2fc-45fe-9861-c4dedd73cdc3.jpg)
 
 
-### What we used for the security
+## Security
+
+
 
 
 
