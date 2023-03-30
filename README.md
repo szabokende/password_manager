@@ -42,6 +42,13 @@ On Android the package utilizes a native library called EncryptedSharedPreferenc
 ### Web
 flutter_secure_storage uses an experimatal project called WebCrypto. The intent is that the browser is creating the private key, and as a result, the encrypted strings in local_storage are not portable to other browsers or other machines and will only work on the same domain. As it is an experimental project is is advised by the creators to use it at your own risk, as there could be unknown vulnerabilities.
 
+### Our approach
+The biggest security threat is when a user wants to syncronize their passwords accross multiple devices. Our approach to solve this problem is to upload the encrypted passwords to a secure cloud hosted database (Cloud Firestore by Google). When the user uploads the passwrods to the database the application will create a one-time location string and an encryption key and displays it on the device's screen. These credentials are only available during the application's runtime, this way nobody can get their hands on them in rest. 
+When we are downloading the passwords from another device, we give the app the one-time location string and an encryption key. This way the data will be encrypted in the cloud, encrypted in transit and will only be decrypted once arrived to the user's application. 
+
+This approach guarantees that only people who see the original device's screen can syncronize the passwords.
+
+
 
 
 
