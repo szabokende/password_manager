@@ -1,7 +1,7 @@
 
 # Password manager mini project
 
-##Group
+## Group
 Kende Szabo, Kristof Szabo, Oliver Banizs
 
 
