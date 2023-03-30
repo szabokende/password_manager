@@ -3,8 +3,8 @@
 
 
 
-You can check the runing project on the following link: lazyhome.dk
-Or you can run the project on Android or IOS.
+You can check the runing project on the following link: lazyhome.dk.
+Or you can run the project on Android or IOS with Android studio after you downloded the flutter sdk and framework.
 
 ## How to use
 
