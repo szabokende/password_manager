@@ -14,9 +14,9 @@ Or you can run the project on Android or IOS with Android studio after you downl
 
 You can store password locally on the phone and you can sync the password with another device and you can get a strong password suggestion.
 
-- To store password just type in the password and the website where the password belong in the 'password' and 'website' textfield.
+- To store a password just type in the password and the website where the password belongs in the 'password' and 'website' textfield.
 
-- To sync the passwords with another device you need to upload the local passwords to the cloud. After that you need to type in on the new device the 'location' and the 'encryption key' from the old device. Finally just press the 'sync with the cloud' button.
+- To sync the passwords with another device you need to upload the local passwords to the cloud by clicking on the 'upload local passwords to cloud' button. After that you need to type in on the new device the 'location' and the 'encryption key' from the old device. Finally just press the 'sync with the cloud' button.
 
 - To get a strong password suggestion just press the 'suggest a strong password' button.
 
