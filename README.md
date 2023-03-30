@@ -10,6 +10,19 @@
 You can check the runing project on the following link: lazyhome.dk.
 Or you can run the project on Android or IOS with Android studio after you downloded the flutter sdk and framework.
 
+## How to use
+
+You can store password locali on phone and you can sync the password with another device and you can get a strong password suggestion.
+
+- To store password just type in the password and the website where the password belong in the 'password' and 'website' textfield.
+
+- To sync the passwords with another device you need to upload the local passwords to the colud. After that you need to type in on the new device the 'lacation' and the 'encryption key' from the old device. Finaly jast press the 'sync with the cloud' button.
+
+- To get a strong password suggestion just perss the 'suggest a strong password' button.
+
+- To check the local password just perss the 'show loacl passwords' button.
+
+
 ## Screenshots
 
 
