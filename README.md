@@ -33,6 +33,14 @@ Or you can run the project on Android or IOS with Android studio after you downl
 
 ## Security
 
+password_manager uses the flutter_secure_storage. This will use different security measures on each platform.
+
+### Android
+
+On Android the package utilizes a native library called EncryptedSharedPreferences. EncryptedSharedPreferences uses AES encryption to ensure maximum security. This library will store every value in an encrypted key-value store.
+
+### Web
+flutter_secure_storage uses an experimatal project called WebCrypto. The intent is that the browser is creating the private key, and as a result, the encrypted strings in local_storage are not portable to other browsers or other machines and will only work on the same domain. As it is an experimental project is is advised by the creators to use it at your own risk, as there could be unknown vulnerabilities.
 
 
 
