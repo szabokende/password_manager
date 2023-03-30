@@ -11,8 +11,8 @@ class PasswordModel extends PasswordEntity {
 
   factory PasswordModel.fromJson(Map<String, dynamic> json) {
     return PasswordModel(
-      website: json['choices'][0]['password']['role'] ?? 'role',
-      password: json['choices'][0]['password']['content'] ?? 'password',
+      website: json['website'] ?? 'website',
+      password: json['password'] ?? 'password',
     );
   }
 

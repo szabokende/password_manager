@@ -8,6 +8,7 @@ import 'package:go_router/go_router.dart';
 import 'package:material_color_generator/material_color_generator.dart';
 import 'features/password_feature/domain/entities/password_entity.dart';
 import 'features/password_feature/presentation/bloc/password_bloc.dart';
+import 'features/password_feature/presentation/pages/syncDownPage.dart';
 import 'firebase_options.dart';
 import 'features/password_feature/presentation/pages/home_page.dart';
 import 'injection_container.dart' as di;
@@ -119,11 +120,10 @@ final GoRouter _router = GoRouter(
             },
           ),
           GoRoute(
-            name: CHAT,
-            path: CHAT,
+            name: SYNC_DOWN_PAGE,
+            path: SYNC_DOWN_PAGE,
             builder: (context, state) {
-              return HomePage(
-
+              return SyncDownPage(
               );
             },
           ),
