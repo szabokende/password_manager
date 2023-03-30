@@ -1,16 +1,13 @@
-# password_manager
+# Where to run
 
-A new Flutter project.
+You can check the runing project on the following link: lazyhome.dk
+Or you can run the project on Android or IOS.
 
-## Getting Started
+## How to use
 
-This project is a starting point for a Flutter application.
+<img width="1440" alt="Screenshot 2023-03-30 at 17 24 24" src="https://user-images.githubusercontent.com/44951484/228885842-58f130ca-2f1a-49ef-be20-daee7ac8d59b.png">
 
-A few resources to get you started if this is your first Flutter project:
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+
+### What we used for the security
