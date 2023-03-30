@@ -24,7 +24,8 @@ Or you can run the project on Android or IOS.
 
 
 
-![Screenshot_20230330_173229](https://user-images.githubusercontent.com/44951484/228890428-9626e0f1-1bd7-4db2-8d64-88dc6c904d1c.jpg)
+![Screenshot_20230330_173239](https://user-images.githubusercontent.com/44951484/228890828-e6f29e75-d2fc-45fe-9861-c4dedd73cdc3.jpg)
+
 
 ### What we used for the security
 
