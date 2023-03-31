@@ -10,7 +10,7 @@ Kende Szabo, Kristof Szabo, Oliver Banizs
 
 
 
-You can explore the running project at the following link: lazyhome.dk. Alternatively, you can run the project on Android or iOS using Android Studio, after downloading the Flutter SDK and framework.
+You can explore the running project at the following link: [lazyhome.dk](https://lazyhome.dk). Alternatively, you can run the project on Android or iOS using Android Studio, after downloading the Flutter SDK and framework.
 
 ## How to use
 
