@@ -14,15 +14,15 @@ You can explore the running project at the following link: lazyhome.dk. Alternat
 
 ## How to use
 
--You can store passwords locally on your phone, sync passwords with another device, and receive strong password suggestions.
+You can store passwords locally on your phone, sync passwords with another device, and receive strong password suggestions.
 
--To store a password, simply enter the password and the corresponding website in the 'password' and 'website' text fields.
+- To store a password, simply enter the password and the corresponding website in the 'password' and 'website' text fields.
 
--To sync passwords with another device, first upload your local passwords to the cloud by clicking the 'upload local passwords to cloud' button. Next, on     the new device, enter the 'location' and 'encryption key' from the old device. Finally, press the 'sync with the cloud' button.
+- To sync passwords with another device, first upload your local passwords to the cloud by clicking the 'upload local passwords to cloud' button. Next, on     the new device, enter the 'location' and 'encryption key' from the old device. Finally, press the 'sync with the cloud' button.
 
--To receive a strong password suggestion, just press the 'suggest a strong password' button.
+- To receive a strong password suggestion, just press the 'suggest a strong password' button.
 
--To view your local passwords, press the 'show local passwords' button.
+- To view your local passwords, press the 'show local passwords' button.
 
 
 ## Screenshots
